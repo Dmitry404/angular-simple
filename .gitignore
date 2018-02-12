@@ -25,6 +25,10 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# IDE - intellij
+.idea
+*.iml
+
 # misc
 /.sass-cache
 /connect.lock
