@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './username.component.html',
 })
 export class UsernameComponent  {
-  userName: string '';
+  userName = '';
 
   isUserNameEmpty() {
     return this.userName === '';
