@@ -1,3 +1,11 @@
 h5, .server-info {
   color: #696969;
 }
+
+.server-info > .online {
+  color: #008000;
+}
+
+.server-info > .offline {
+  color: #ff0000;
+}
