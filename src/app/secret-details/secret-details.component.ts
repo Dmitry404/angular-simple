@@ -20,13 +20,6 @@ export class SecretDetailsComponent {
     }
   }
 
-  getLoggerBackgroundColor() {
-    if (this.shouldColorSecretLog()) {
-      return 'blue';
-    }
-    return 'white';
-  }
-
   private shouldColorSecretLog() {
     return this.detailsClickedLog.length >= 5;
   }
