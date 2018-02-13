@@ -7,10 +7,6 @@ import { Component } from '@angular/core';
 export class UsernameComponent  {
   userName: string '';
 
-  onUpdateUserName(event: any) {
-    this.userName = (<HTMLInputElement>event.target).value;
-  }
-
   isUserNameEmpty() {
     return this.userName === '';
   }
