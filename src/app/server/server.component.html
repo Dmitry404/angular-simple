@@ -1,8 +1,0 @@
-<h5>ServerComponent</h5>
-<div class="row container">
-  <div class="server-info">Server ID: {{ serverId }}</div>
-  <!--<div class="server-info">Server status: <span [ngStyle]="{backgroundColor: getColor()}">{{ getServerStatus() }}</span></div>-->
-  <!--<div class="server-info">Server status: <span [ngClass]="getColorClass()">{{ getServerStatus() }}</span></div>-->
-  <div class="server-info">Server status: <span [ngClass]="{online: isServerOnline(), offline: !isServerOnline()}">{{ getServerStatus() }}</span></div>
-  <div class="server-info">Server says: 42</div>
-</div>
