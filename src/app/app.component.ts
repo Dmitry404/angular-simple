@@ -9,11 +9,11 @@ export class AppComponent {
   oddNumbers: number [] = [];
   evenNumbers: number [] = [];
 
-  onGameActionEvent(gameAction) {
-    if (gameAction.counter % 2 === 0) {
-      this.evenNumbers.push(gameAction.counter);
+  onGameActionEvent(counter: number) {
+    if (counter % 2 === 0) {
+      this.evenNumbers.push(counter);
     } else {
-      this.oddNumbers.push(gameAction.counter);
+      this.oddNumbers.push(counter);
     }
   }
 }

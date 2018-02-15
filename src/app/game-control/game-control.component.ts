@@ -8,16 +8,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class GameControlComponent {
   private counter = 0;
   private intervalRef;
-  @Output() gameActionEvent = new EventEmitter<{counter: number}>();
+  @Output() gameActionEvent = new EventEmitter<number>();
 
   onGameStart() {
-    this.intervalRef = setInterval(this.fireGameAction, 1000);
-  }
-
-  private fireGameAction = () => {
-    this.gameActionEvent.emit({
-      counter: this.counter++
-    });
+    this.intervalRef = setInterval(() => {
+      this.gameActionEvent.emit(this.counter++);
+    }, 1000);
   }
 
   onGameStop() {
