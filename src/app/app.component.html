@@ -1,0 +1,9 @@
+<hr>
+<div class="container">
+  <app-game-control
+    (gameActionEvent)="onGameActionEvent($event)"
+  ></app-game-control>
+  <hr>
+  <app-game-display-odd *ngFor="let score of oddNumbers">{{ score }}</app-game-display-odd>
+  <app-game-display-even *ngFor="let score of evenNumbers">{{ score }}</app-game-display-even>
+</div>
