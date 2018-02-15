@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-game-display-even',
@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
       color: #ff0000;
     }
   `],
-  template: '<p>Even: <ng-content></ng-content></p>',
+  template: '<p>Even: {{ number }}</p>',
 })
 export class DisplayEvenComponent {
-
+  @Input() number: number;
 }
