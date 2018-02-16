@@ -7,11 +7,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 export class HeaderComponent {
   @Output() menuClickEvent = new EventEmitter<string>();
 
-  onRecipesClick() {
-    this.menuClickEvent.emit('recipes');
-  }
-
-  onShoppingListClick() {
-    this.menuClickEvent.emit('shoppingList');
+  onSelect(menuName: string) {
+    this.menuClickEvent.emit(menuName);
   }
 }
