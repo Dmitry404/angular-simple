@@ -1,0 +1,29 @@
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="showOnlyOdd = !showOnlyOdd"
+      >Only show odd numbers</button>
+      <br>
+      <br>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let number of numbers"
+        >{{ number }}</li>
+      </ul>
+    </div>
+  </div>
+  <div
+    *ngIf="showOnlyOdd; else showOnlyEven"
+    [ngClass]="{odd: showOnlyOdd}"
+    [ngStyle]="{backgroundColor: showOnlyOdd ? 'yellow' : 'transparent'}"
+  >
+    only odd are supposed be here
+  </div>
+  <ng-template #showOnlyEven>
+    only even are supposed be here
+  </ng-template>
+</div>
