@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  navigatedTo: string;
+
+  onMenuSelectedEvent(selectedMenuName) {
+    this.navigatedTo = selectedMenuName;
+  }
 }

@@ -7,9 +7,9 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent {
-  ingredients: Ingredient[] = [
-    new Ingredient('Watermelon', 1),
-    new Ingredient('Potatoes', 2),
-    new Ingredient('Mayonesee', 1),
-  ];
+  ingredients: Ingredient[] = [];
+
+  onIngredientAdded(ingredient: Ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }
