@@ -46,4 +46,12 @@
   <div class="running-alert" *appUnless="!showOnlyOdd">
     Only odd numbers option is selected
   </div>
+
+  <hr>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="1">Value is 1</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="100">Value is 100</p>
+    <p *ngSwitchDefault="">Value is Default</p>
+  </div>
 </div>
