@@ -35,3 +35,9 @@
      [afterHightlightColor]="'yellow'"
   >Style me with appBetterHighlight selector</p>
 </div>
+
+<ng-template [ngIf]="showOnlyOdd">
+  <div style="background-color: beige">
+    this is how *ngIf would look in fact
+  </div>
+</ng-template>
