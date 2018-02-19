@@ -34,10 +34,16 @@
      [hightlightColor]="'red'"
      [afterHightlightColor]="'yellow'"
   >Style me with appBetterHighlight selector</p>
-</div>
 
-<ng-template [ngIf]="showOnlyOdd">
-  <div style="background-color: beige">
-    this is how *ngIf would look in fact
+  <hr>
+  <ng-template [ngIf]="showOnlyOdd">
+    <div style="background-color: beige">
+      this is how *ngIf would look in fact
+    </div>
+  </ng-template>
+
+  <hr>
+  <div class="running-alert" *appUnless="!showOnlyOdd">
+    Only odd numbers option is selected
   </div>
-</ng-template>
+</div>
