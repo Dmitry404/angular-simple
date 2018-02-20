@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from "./shopping-list.service";
 
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  styleUrls: ['./shopping-list.component.css'],
+  providers: [ShoppingListService]
 })
 export class ShoppingListComponent {
-  ingredients: Ingredient[] = [];
+  ingredients: Ingredient[];
+
+  constructor(private shoppingListService: ShoppingListService) {
+    this.ingredients = shoppingListService.ingredients;
+  }
 
   onIngredientAdded(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+    this.shoppingListService.addIngredient(ingredient);
   }
 }
