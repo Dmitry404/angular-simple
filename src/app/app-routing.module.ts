@@ -5,6 +5,7 @@ import { NgModule } from "@angular/core";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const appRoutes : Routes = [
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   { path: 'recipes', component: RecipesComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
   { path: '**', component: PageNotFoundComponent },
