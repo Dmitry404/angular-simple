@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ShoppingListService } from "./shopping-list/shopping-list.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,14 @@ import { ShoppingListService } from "./shopping-list/shopping-list.service";
   providers: [ShoppingListService]
 })
 export class AppComponent {
-  navigatedTo: string;
+  constructor(private router: Router) {
+  }
 
   onMenuSelectedEvent(selectedMenuName) {
-    this.navigatedTo = selectedMenuName;
+    if (selectedMenuName === 'recipes') {
+      this.router.navigate(['/recipes']);
+    } else if (selectedMenuName === 'shoppingList') {
+      this.router.navigate(['/shopping-list']);
+    }
   }
 }
