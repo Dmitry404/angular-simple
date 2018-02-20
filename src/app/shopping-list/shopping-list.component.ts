@@ -12,7 +12,10 @@ export class ShoppingListComponent {
   ingredients: Ingredient[];
 
   constructor(private shoppingListService: ShoppingListService) {
-    this.ingredients = shoppingListService.ingredients;
+    this.ingredients = shoppingListService.getIngredients();
+    shoppingListService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => {
+      this.ingredients = ingredients;
+    });
   }
 
   onIngredientAdded(ingredient: Ingredient) {
