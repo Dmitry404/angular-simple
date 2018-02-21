@@ -3,6 +3,7 @@ import { Observable } from "rxjs/Observable";
 import { Observer } from "rxjs/Observer";
 import { Subscription } from "rxjs/Subscription";
 import "rxjs/add/observable/interval";
+import "rxjs/add/operator/map";
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import "rxjs/add/observable/interval";
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private numbersSubscription: Subscription;
+  private numbersAsStringsSubscription: Subscription;
   private myObservableSubscription: Subscription;
 
   ngOnInit() {
@@ -18,6 +20,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.numbersSubscription = numbers.subscribe((number: number) => {
       console.log(number);
     });
+
+    this.numbersAsStringsSubscription = numbers.map((number: number): string => {
+      return 'Number is ' + number;
+    }).subscribe((numberAsString: string) => console.log(numberAsString));
 
     const observable = Observable.create((observer: Observer<string>) => {
       setTimeout(() => observer.next('foo'), 2000);
@@ -41,5 +47,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.numbersSubscription.unsubscribe();
     this.myObservableSubscription.unsubscribe(); // if you go from 'home' the component will be destroyed but this subscription continues to work
+    this.numbersAsStringsSubscription.unsubscribe();
   }
 }
