@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('form') signupForm: NgForm;
+  answer: string;
+  genders = ['male', 'femail'];
+
   suggestUserName() {
     const suggestedName = 'Superuser';
+  }
+
+  onSubmit(form: ElementRef) {
+    console.log(form);
+    console.log(this.signupForm);
   }
 }
