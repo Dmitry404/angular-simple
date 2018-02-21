@@ -13,6 +13,15 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    this.signupForm.setValue({
+      userData: {
+        username: suggestedName,
+        email: 'superuser@example.com',
+      },
+      secret: 'teacher',
+      answer: 'Mr. Bork',
+      gender: 'male',
+    });
   }
 
   onSubmit(form: ElementRef) {
