@@ -23,11 +23,12 @@
             id="subscription"
             class="form-control"
             name="subscription"
-            [ngModel]="'advanced'"
+            [ngModel]="defaultSubscription"
           >
-            <option value="basic">Basic</option>
-            <option value="advanced">Advanced</option>
-            <option value="pro">Pro</option>
+            <option
+              *ngFor="let subscription of subscriptions"
+              [value]="subscription"
+            >{{ subscription }}</option>
           </select>
         </div>
         <div class="form-group">
@@ -45,7 +46,7 @@
           <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a password at least 6 characters long!</span>
         </div>
         <span class="help-block" *ngIf="!form.valid && form.touched">Please enter valid information to subscribe!</span>
-        <button class="btn btn-primary" [disabled]="!form.touched || !form.valid">Submit</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.touched || !form.valid">Submit</button>
       </form>
     </div>
     <div *ngIf="subscriptionSubmitted">

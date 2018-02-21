@@ -15,6 +15,9 @@ export class AppComponent {
   };
   subscriptionSubmitted = false;
 
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSubscription = 'Advanced';
+
   onFormSubmit() {
     this.subscriptionData.email = this.subscriptionForm.value.email;
     this.subscriptionData.password = this.subscriptionForm.value.password;
