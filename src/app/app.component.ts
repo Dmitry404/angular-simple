@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm: FormGroup;
   forbiddenUsernames = ['admin', 'root'];
+  usernameSuggestions = ['john.doe', 'jane.roe', 'tom', 'jerold'];
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm);
+    this.signupForm.reset();
   }
 
   onAddHobby() {
@@ -57,5 +59,25 @@ export class AppComponent implements OnInit {
       }, 2500);
     });
     return promise;
+  }
+
+  onLoadDefaults() {
+    this.signupForm.setValue({
+      'userData': {
+        'username': 'john.doe',
+        'email': 'john.doe@example.com',
+      },
+      'gender': 'male',
+      'hobbies': [],
+    });
+  }
+
+  onSuggestUsername() {
+    const username = this.usernameSuggestions[Math.floor(Math.random() * this.usernameSuggestions.length)];
+    this.signupForm.patchValue({
+      'userData': {
+        'username': username,
+      }
+    })
   }
 }
