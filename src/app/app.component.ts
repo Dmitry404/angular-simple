@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.projectForm);
+    console.log(this.projectForm.value);
   }
 
   containsForbiddenName(control: FormControl): Promise<any> | Observable<any> {
