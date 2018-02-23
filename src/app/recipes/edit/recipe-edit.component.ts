@@ -29,7 +29,7 @@ export class RecipeEditComponent implements OnInit {
   private initForm() {
     const recipe = this.recipeService.getRecipe(this.id);
     const recipeName = this.editMode ? recipe.name : '';
-    const recipeDescription = this.editMode ? recipe.desription : '';
+    const recipeDescription = this.editMode ? recipe.description : '';
     const recipeImagePath = this.editMode ? recipe.imagePath : '';
     const recipeIngredients = new FormArray([]);
     if (this.editMode && recipe['ingredients']) {
