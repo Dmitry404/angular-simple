@@ -27,11 +27,19 @@ export class AppComponent {
     },
     {
       instanceType: 'small',
-      name: 'Testing Environment Server',
-      status: 'stable',
+      name: 'Production Server',
+      status: 'off-road',
       started: new Date(15, 1, 2017)
-    }
+    },
+    {
+      instanceType: 'small',
+      name: 'Testing Environment Server',
+      status: 'critical',
+      started: new Date(15, 1, 2017)
+    },
   ];
+  filteredStatus = '';
+
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
     return {
       'list-group-item-success': server.status === 'stable',
